@@ -2,8 +2,6 @@ const inputEl = document.querySelector("#input");
 const btnEl= document.querySelector("#genrateBtn");
 const image = document.querySelector(".image");
 const btnClass= document.querySelector(".btnclass");
-const searchAgainBtn = document.querySelector(".search-btn");
-const download= document.querySelector(".download-btn");
 
 const qrgenerate= async (text)=>{
     if (text=="") {
@@ -31,17 +29,20 @@ const qrgenerate= async (text)=>{
 inputEl.addEventListener("keyup",()=>{
     if(!inputEl.value.trim()){
         image.innerHTML="";
+        btnClass.innerHTML="";
+        btnEl.innerText = "Generate QR Code";
     }
 
 });
 btnEl.addEventListener("click",()=>{
-    qrgenerate(inputEl.value)
-});
-inputEl.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") {
-        qrgenerate(inputEl.value);
+    if(btnEl.innerText=="Generated Text QR Code"){
+        alert("Enter another text")
+        return;
     }
+    qrgenerate(inputEl.value)
+    
 });
+
 // searchAgainBtn.addEventListener("click",()=>{
 //      image.innerHTML="";
 //      inputEl.value='';

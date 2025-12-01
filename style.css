@@ -68,6 +68,7 @@ button{
 }
 button:hover{
     opacity: 1;
+    cursor: pointer;
 }
 button:active{
     background-color: var(--primary-dark);   
@@ -102,6 +103,7 @@ button:active{
 
 .download-btn:hover {
     background: #34b443;
+    cursor: pointer;
 }
 
 
@@ -119,6 +121,7 @@ button:active{
 
 .search-btn:hover {
     background: #e05fb1;
+    cursor: pointer;
 }
 
 @media (max-width:375px) {
@@ -127,5 +130,7 @@ button:active{
         font-size:2.2rem;
         text-align: center;
     }
-    
+    .search-btn{
+        padding: 10px 10px;
+    }
 }
